@@ -71,8 +71,9 @@
    */
   function sendMessage(im, msg, to) {
     const key = '08b46ba1b31d4c69b5701b6c17326fc8'
+    let protocol = window.location.protocol
 
-    return fetch(`http://www.tuling123.com/openapi/api?key=${key}&info=${msg}&userid=${to.id}`, {
+    return fetch(`${protocol }//www.tuling123.com/openapi/api?key=${key}&info=${msg}&userid=${to.id}`, {
       method: 'POST',
       type: 'cors'
     }).then(res => res.json())
